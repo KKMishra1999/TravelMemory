@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { baseUrl } from "../../url";
 import axios from "axios";
 
@@ -16,9 +17,17 @@ export default function AddExperience() {
             featured: false,
             shortDescription: ""
     })
+    const navigate = useNavigate();
     const submitForm = () => {
         console.log(formdata)
         axios.post(`${baseUrl}/trip`, formdata)
+            .then((response) => {
+                console.log('Form submitted successfully:', response.data);
+                navigate('/');
+            })
+            .catch((error) => {
+                console.error('Error submitting form:', error);
+            });
     }
 
   return (
