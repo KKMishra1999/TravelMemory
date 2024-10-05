@@ -57,18 +57,14 @@ export default function ExperienceDetails(props) {
               <div class="row">
                 <div class="col-12">Trip Type: {data.tripType}</div>
               </div>
+              <div class="row">
+                <div class="col-12">Experience: {data.experience}</div>
+              </div>
             </div>
             <div class="col-3"></div>
           </div>
         </div>
         <br></br>
-        <div class="row">
-          <div class="col-1"></div>
-          <div class="col-10" style={{ textAlign: "justify"}}>
-          {data.experience}
-          </div>
-          <div class="col-1"></div>
-        </div>
       </div>
     );
   }else{
